@@ -228,8 +228,8 @@ def ensure_installed():
                 print("Need write permission to install tssah. Sudo command is needed...")
                 sudo_cmd = "sudo "
 
-            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/develop/tsh.py -O " + BIN)
-            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/develop/tsh -O /tmp/xtsh")
+            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/develop/tsh.py -O " + BIN + " > /dev/null 2>&1")
+            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/develop/tsh -O /tmp/xtsh > /dev/null 2>&1")
             os.system(sudo_cmd + "chmod +x " + BIN)
             os.system(sudo_cmd + "chmod +x /tmp/xtsh")
             os.system(sudo_cmd + "/tmp/xtsh")

@@ -16,7 +16,7 @@ Benefit: 5-15 seconds time saving when switching.
 Installation
 ---------------
 
-    $ python <(curl "https://raw.githubusercontent.com/anvie/tssah/master/tsh.py" -s -N)
+    $ python <(curl "https://raw.githubusercontent.com/anvie/tssah/develop/tsh.py" -s -N)
 
 
 Edit `~/.tssah/servers.cfg` and add your own server definition with this format: `name=[SERVER-NAME] host=[HOST] port=[SSH-PORT] user=[LOGIN-NAME]`
