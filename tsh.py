@@ -197,12 +197,6 @@ def load_servers():
 
     if os.path.exists(server_txt):
         servers = read_server_file(server_txt)
-    # else:
-    #     with open(server_txt, "w") as f:
-    #         f.write("# Add your servers here\n")
-    #         f.write("# Using this format: [NAME] [IP-OR-HOST-NAME] [PORT] [USER]\n")
-    #         f.write("# Eg:\n")
-    #         f.write("# alpha1 123.11.22.33 771 root\n")
 
     if os.path.exists(server_ini):
         servers.extend(read_server_file(server_ini))
@@ -234,8 +228,11 @@ def ensure_installed():
                 print("Need write permission to install tssah. Sudo command is needed...")
                 sudo_cmd = "sudo "
 
-            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/master/tsh.py -O " + BIN)
+            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/develop/tsh.py -O " + BIN)
+            os.system(sudo_cmd + "wget https://raw.githubusercontent.com/anvie/tssah/develop/tsh -O /tmp/xtsh")
             os.system(sudo_cmd + "chmod +x " + BIN)
+            os.system(sudo_cmd + "chmod +x /tmp/xtsh")
+            os.system(sudo_cmd + "/tmp/xtsh")
             print("Done.")
 
 
